@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+# 管理ダッシュボードと内部文書は検索エンジンに載せない
+Disallow: /dashboard.html
+Disallow: /更新ガイド.md
+
+Sitemap: https://iry-mens-datsumou.com/sitemap.xml

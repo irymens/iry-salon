@@ -1,0 +1,24 @@
+# ============================================================
+# セキュリティ設定(Netlify / Cloudflare Pages が自動で読み込みます)
+# サイトの改ざん・踏み台化・クリックジャッキングを防ぐための保険です。
+# ============================================================
+
+/*
+  # 他サイトに勝手に埋め込まれる(踏み台化)のを防止
+  X-Frame-Options: SAMEORIGIN
+  # ファイルの種類偽装を防止
+  X-Content-Type-Options: nosniff
+  # 参照元情報の送りすぎを防止
+  Referrer-Policy: strict-origin-when-cross-origin
+  # 常時HTTPS(暗号化通信)を強制
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  # 不要な端末機能(位置情報・カメラ・マイク)へのアクセスを無効化
+  Permissions-Policy: geolocation=(), camera=(), microphone=()
+
+# 管理ダッシュボードは検索エンジンに載せない
+/dashboard.html
+  X-Robots-Tag: noindex, nofollow
+
+# 内部向け更新ガイドも検索エンジンに載せない
+/更新ガイド.md
+  X-Robots-Tag: noindex, nofollow
