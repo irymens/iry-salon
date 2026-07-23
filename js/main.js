@@ -188,6 +188,20 @@
     attachPhFallback(baRoot);
   }
 
+  /* ---------- 初回限定クーポン(campaign.html の横スクロールカルーセル) ---------- */
+  const campaignRoot = $("campaign-track");
+  if (campaignRoot && D.campaignCoupons) {
+    campaignRoot.innerHTML = D.campaignCoupons.map((c, i) => `
+      <a class="coupon-card reveal" href="${esc(c.url)}" target="_blank" rel="noopener" style="transition-delay:${(i % 4) * 0.08}s">
+        <span class="coupon-badge">${esc(c.badge)}</span>
+        <img src="${esc(c.image)}" alt="${esc(c.title)}の初回クーポン" loading="lazy">
+        <span class="coupon-info">
+          <span class="coupon-title">${esc(c.title)}</span>
+          <span class="coupon-price"><span class="yen">&yen;</span>${esc(c.price)}<small>(初回)</small></span>
+        </span>
+      </a>`).join("");
+  }
+
   /* ---------- スタッフ ---------- */
   const staffRoot = $("staff-list");
   if (staffRoot) {
