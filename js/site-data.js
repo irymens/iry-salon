@@ -14,22 +14,33 @@ const SITE_DATA = {
 
   /* ---------- 初回限定クーポン(特設ページ campaign.html 用) ----------
      Square予約の実際のクーポンと連動。urlは各サービスの予約ページIDです。
-     並び順=表示順。badge欄は「月◯名限定」等の希少性訴求。 */
-  campaignCoupons: [
-    { image: "images/campaign/hige-u22-100.jpg", title: "ヒゲ脱毛(U22)", badge: "月5名様限定", price: "100", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/EWFVMGUFBMOD5Z3PRE2B4B55" },
-    { image: "images/campaign/hige-shakaijin-500.jpg", title: "ヒゲ脱毛(社会人)", badge: "月5名様限定", price: "500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/NYVMA2VTJJDMWUM5IWIU64CV" },
-    { image: "images/campaign/hige-3kagetsu-2980.jpg", title: "ヒゲ脱毛(3ヶ月保証付き)", badge: "初回限定", price: "2,980", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/PUAHDYMIFC6Q3RYU5Q4S3TNJ" },
-    { image: "images/campaign/hige-gakuwari-2500.jpg", title: "ヒゲ脱毛(学割U22)", badge: "学生限定", price: "2,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/HXKC4KTXDEHVNYUKRHXZC6GH" },
-    { image: "images/campaign/zenshin-7000.jpg", title: "全身脱毛", badge: "月3名様限定", price: "7,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/QRRDYVLEG6UAJDZWJFGSTURR" },
-    { image: "images/campaign/zenshin-kao-vio-12000.jpg", title: "全身脱毛(顔・VIO込み)", badge: "初回限定", price: "12,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/AQ34FVAV5DCKNZMIHM4EFNO5" },
-    { image: "images/campaign/vio-3000.jpg", title: "VIO脱毛", badge: "月3名様限定", price: "3,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/GHCHX7TFPX57V6VNKEVTP7PF" },
-    { image: "images/campaign/ashi-4500.jpg", title: "足脱毛", badge: "初回限定", price: "4,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/A4TJYBCJ7KGXZVTI5H4TN2UR" },
-    { image: "images/campaign/jouhanshin-6000.jpg", title: "上半身脱毛(ヒゲ込み)", badge: "月3名様限定", price: "6,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/T4E4R624WZ6753LR5MSMVTNT" },
-    { image: "images/campaign/gehanshin-vio-6000.jpg", title: "下半身脱毛(VIO込み)", badge: "月3名様限定", price: "6,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/74GYP2VLHIX5VDEYT6FTTAU4" },
-    { image: "images/campaign/hige-ude-4000.jpg", title: "ヒゲ＆腕脱毛", badge: "月3名様限定", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/P7NTHNB25O4T3NL2QIEYRWGF" },
-    { image: "images/campaign/hige-ashi-4000.jpg", title: "ヒゲ＆足脱毛", badge: "月3名様限定", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/ZXCDLTCWYVQO7WQJC2VGFGC4" },
-    { image: "images/campaign/hige-vio-4000.jpg", title: "ヒゲ＆VIO脱毛", badge: "月3名様限定", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/QRQGC5ZH4XB6TIBCDVLX34WO" },
-  ],
+     3グループに分かれています:
+     ・limited  = 月◯名様限定(枠数限定、なくなり次第終了)
+     ・student  = 学生初回(↑の枠数を超えた学生の方向け、常時受付)
+     ・shakaijin = 社会人初回(↑の枠数を超えた社会人の方向け、常時受付) */
+  campaignCoupons: {
+    limited: [
+      { image: "images/campaign/hige-u22-100.jpg", title: "ヒゲ脱毛(学生)", badge: "月5名様限定", price: "100", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/EWFVMGUFBMOD5Z3PRE2B4B55" },
+      { image: "images/campaign/hige-shakaijin-500.jpg", title: "ヒゲ脱毛(社会人)", badge: "月5名様限定", price: "500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/NYVMA2VTJJDMWUM5IWIU64CV" },
+      { image: "images/campaign/zenshin-7000.jpg", title: "全身脱毛", badge: "月3名様限定", price: "7,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/QRRDYVLEG6UAJDZWJFGSTURR" },
+      { image: "images/campaign/vio-3000.jpg", title: "VIO脱毛", badge: "月3名様限定", price: "3,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/GHCHX7TFPX57V6VNKEVTP7PF" },
+      { image: "images/campaign/jouhanshin-6000.jpg", title: "上半身脱毛(ヒゲ込み)", badge: "月3名様限定", price: "6,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/T4E4R624WZ6753LR5MSMVTNT" },
+      { image: "images/campaign/gehanshin-vio-6000.jpg", title: "下半身脱毛(VIO込み)", badge: "月3名様限定", price: "6,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/74GYP2VLHIX5VDEYT6FTTAU4" },
+      { image: "images/campaign/hige-ashi-4000.jpg", title: "ヒゲ＆足脱毛", badge: "月3名様限定", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/ZXCDLTCWYVQO7WQJC2VGFGC4" },
+      { image: "images/campaign/hige-ude-4000.jpg", title: "ヒゲ＆腕脱毛", badge: "月3名様限定", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/P7NTHNB25O4T3NL2QIEYRWGF" },
+      { image: "images/campaign/hige-vio-4000.jpg", title: "ヒゲ＆VIO脱毛", badge: "月3名様限定", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/QRQGC5ZH4XB6TIBCDVLX34WO" },
+    ],
+    student: [
+      { image: "images/campaign/hige-gakuwari-2500.jpg", title: "ヒゲ脱毛(学割)", badge: "学生初回", price: "2,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/HXKC4KTXDEHVNYUKRHXZC6GH" },
+      { image: "images/campaign/zenshin-gakuwari-10000.jpg", title: "全身脱毛(学割)", badge: "学生初回", price: "10,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/E5EBV3EXA2LDUBIUM6UTTQUY" },
+      { image: "images/campaign/ashi-gakuwari-3500.jpg", title: "足脱毛(学割)", badge: "学生初回", price: "3,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/NJYVZ6WLXVVNLMKWJOHSJXMQ" },
+    ],
+    shakaijin: [
+      { image: "images/campaign/hige-3kagetsu-2980.jpg", title: "ヒゲ脱毛(3ヶ月保証付き)", badge: "社会人初回", price: "2,980", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/PUAHDYMIFC6Q3RYU5Q4S3TNJ" },
+      { image: "images/campaign/zenshin-kao-vio-12000.jpg", title: "全身脱毛(顔・VIO込み)", badge: "社会人初回", price: "12,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/AQ34FVAV5DCKNZMIHM4EFNO5" },
+      { image: "images/campaign/ashi-4500.jpg", title: "足脱毛", badge: "社会人初回", price: "4,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/A4TJYBCJ7KGXZVTI5H4TN2UR" },
+    ],
+  },
 
   /* ---------- 基本情報 ---------- */
   info: {

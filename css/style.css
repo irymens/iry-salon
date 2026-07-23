@@ -618,6 +618,14 @@ a { color: inherit; }
 .hero-offer-arrow { color: var(--sub); font-size: 13px; white-space: nowrap; }
 
 /* ---------- 初回限定クーポン(campaign.html 横スクロールカルーセル) ---------- */
+.campaign-group-title {
+  display: flex; align-items: baseline; gap: 12px;
+  font-family: var(--font-display); font-size: 20px; font-weight: 600; color: #fff;
+  margin: 56px 0 22px;
+}
+.campaign-group-title:first-of-type { margin-top: 8px; }
+.campaign-group-title small { font-size: 12px; font-weight: 400; color: var(--sub); }
+.campaign-sub-lead { margin: -6px 0 8px; font-size: 13.5px; }
 .coupon-carousel {
   display: flex;
   gap: 18px;
