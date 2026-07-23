@@ -144,7 +144,7 @@ const SITE_DATA = {
 
   staff: [
     {
-      name: "Owner & Hair Removal Specialist",
+      name: "Ryo Yamashita — Owner & Hair Removal Specialist",
       photo: "images/staff/owner.jpg",
       message: "With 11 years of experience as a physical therapist, I've spent my career studying muscles, nerves, skin, and the body as a whole. That experience shapes every decision I make in this chair — judging exactly how far to go with each treatment, for each person's skin, every single time. I don't see hair removal as simply applying light to skin; I see it as a responsibility for the skin entrusted to me. Taking hair cycles, skin type, and lifestyle into account, I'll suggest a plan that genuinely fits you.",
     },
