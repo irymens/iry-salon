@@ -12,6 +12,32 @@
 
 const SITE_DATA = {
 
+  /* ---------- First-visit coupons (campaign-en.html) ----------
+     Same images/prices/urls as the Japanese site-data.js, titles translated. */
+  campaignCoupons: {
+    limited: [
+      { image: "images/campaign/hige-u22-100.jpg", title: "Beard Removal (Student)", badge: "5 slots/month", price: "100", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/EWFVMGUFBMOD5Z3PRE2B4B55" },
+      { image: "images/campaign/hige-shakaijin-500.jpg", title: "Beard Removal (Working Adult)", badge: "5 slots/month", price: "500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/NYVMA2VTJJDMWUM5IWIU64CV" },
+      { image: "images/campaign/zenshin-7000.jpg", title: "Full-Body Removal", badge: "3 slots/month", price: "7,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/QRRDYVLEG6UAJDZWJFGSTURR" },
+      { image: "images/campaign/vio-3000.jpg", title: "VIO Removal", badge: "3 slots/month", price: "3,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/GHCHX7TFPX57V6VNKEVTP7PF" },
+      { image: "images/campaign/jouhanshin-6000.jpg", title: "Upper Body (incl. Beard)", badge: "3 slots/month", price: "6,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/T4E4R624WZ6753LR5MSMVTNT" },
+      { image: "images/campaign/gehanshin-vio-6000.jpg", title: "Lower Body (incl. VIO)", badge: "3 slots/month", price: "6,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/74GYP2VLHIX5VDEYT6FTTAU4" },
+      { image: "images/campaign/hige-ashi-4000.jpg", title: "Beard & Legs", badge: "3 slots/month", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/ZXCDLTCWYVQO7WQJC2VGFGC4" },
+      { image: "images/campaign/hige-ude-4000.jpg", title: "Beard & Arms", badge: "3 slots/month", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/P7NTHNB25O4T3NL2QIEYRWGF" },
+      { image: "images/campaign/hige-vio-4000.jpg", title: "Beard & VIO", badge: "3 slots/month", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/QRQGC5ZH4XB6TIBCDVLX34WO" },
+    ],
+    student: [
+      { image: "images/campaign/hige-gakuwari-2500.jpg", title: "Beard Removal (Student)", badge: "First Visit", price: "2,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/HXKC4KTXDEHVNYUKRHXZC6GH" },
+      { image: "images/campaign/zenshin-gakuwari-10000.jpg", title: "Full-Body (Student)", badge: "First Visit", price: "10,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/E5EBV3EXA2LDUBIUM6UTTQUY" },
+      { image: "images/campaign/ashi-gakuwari-3500.jpg", title: "Leg Removal (Student)", badge: "First Visit", price: "3,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/NJYVZ6WLXVVNLMKWJOHSJXMQ" },
+    ],
+    shakaijin: [
+      { image: "images/campaign/hige-3kagetsu-2980.jpg", title: "Beard Removal (3-Month Guarantee)", badge: "First Visit", price: "2,980", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/PUAHDYMIFC6Q3RYU5Q4S3TNJ" },
+      { image: "images/campaign/zenshin-kao-vio-12000.jpg", title: "Full-Body (incl. Face & VIO)", badge: "First Visit", price: "12,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/AQ34FVAV5DCKNZMIHM4EFNO5" },
+      { image: "images/campaign/ashi-4500.jpg", title: "Leg Removal", badge: "First Visit", price: "4,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/A4TJYBCJ7KGXZVTI5H4TN2UR" },
+    ],
+  },
+
   info: {
     salonName: "Iry",
     address: "1-1-11 Shimodori, Chuo-ku, Kumamoto City, Kumamoto 860-0807, Japan (Kovacs Bldg. 4F)",

@@ -28,6 +28,21 @@
     <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://iry-mens-datsumou.com/campaign.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://iry-mens-datsumou.com/campaign-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://iry-mens-datsumou.com/campaign-zh.html"/>
+  </url>
+  <url>
+    <loc>https://iry-mens-datsumou.com/campaign-en.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iry-mens-datsumou.com/campaign-zh.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://iry-mens-datsumou.com/blog.html</loc>

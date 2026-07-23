@@ -12,6 +12,32 @@
 
 const SITE_DATA = {
 
+  /* ---------- 初回限定クーポン(campaign-zh.html用) ----------
+     圖片・價格・預約網址與日文版site-data.js相同，僅翻譯標題。 */
+  campaignCoupons: {
+    limited: [
+      { image: "images/campaign/hige-u22-100.jpg", title: "鬍鬚脫毛(學生)", badge: "每月5名限定", price: "100", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/EWFVMGUFBMOD5Z3PRE2B4B55" },
+      { image: "images/campaign/hige-shakaijin-500.jpg", title: "鬍鬚脫毛(社會人)", badge: "每月5名限定", price: "500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/NYVMA2VTJJDMWUM5IWIU64CV" },
+      { image: "images/campaign/zenshin-7000.jpg", title: "全身脫毛", badge: "每月3名限定", price: "7,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/QRRDYVLEG6UAJDZWJFGSTURR" },
+      { image: "images/campaign/vio-3000.jpg", title: "VIO脫毛", badge: "每月3名限定", price: "3,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/GHCHX7TFPX57V6VNKEVTP7PF" },
+      { image: "images/campaign/jouhanshin-6000.jpg", title: "上半身脫毛(含鬍鬚)", badge: "每月3名限定", price: "6,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/T4E4R624WZ6753LR5MSMVTNT" },
+      { image: "images/campaign/gehanshin-vio-6000.jpg", title: "下半身脫毛(含VIO)", badge: "每月3名限定", price: "6,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/74GYP2VLHIX5VDEYT6FTTAU4" },
+      { image: "images/campaign/hige-ashi-4000.jpg", title: "鬍鬚＆腿部脫毛", badge: "每月3名限定", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/ZXCDLTCWYVQO7WQJC2VGFGC4" },
+      { image: "images/campaign/hige-ude-4000.jpg", title: "鬍鬚＆手臂脫毛", badge: "每月3名限定", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/P7NTHNB25O4T3NL2QIEYRWGF" },
+      { image: "images/campaign/hige-vio-4000.jpg", title: "鬍鬚＆VIO脫毛", badge: "每月3名限定", price: "4,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/QRQGC5ZH4XB6TIBCDVLX34WO" },
+    ],
+    student: [
+      { image: "images/campaign/hige-gakuwari-2500.jpg", title: "鬍鬚脫毛(學生優惠)", badge: "學生初次", price: "2,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/HXKC4KTXDEHVNYUKRHXZC6GH" },
+      { image: "images/campaign/zenshin-gakuwari-10000.jpg", title: "全身脫毛(學生優惠)", badge: "學生初次", price: "10,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/E5EBV3EXA2LDUBIUM6UTTQUY" },
+      { image: "images/campaign/ashi-gakuwari-3500.jpg", title: "腿部脫毛(學生優惠)", badge: "學生初次", price: "3,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/NJYVZ6WLXVVNLMKWJOHSJXMQ" },
+    ],
+    shakaijin: [
+      { image: "images/campaign/hige-3kagetsu-2980.jpg", title: "鬍鬚脫毛(3個月保證)", badge: "社會人初次", price: "2,980", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/PUAHDYMIFC6Q3RYU5Q4S3TNJ" },
+      { image: "images/campaign/zenshin-kao-vio-12000.jpg", title: "全身脫毛(含臉部・VIO)", badge: "社會人初次", price: "12,000", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/AQ34FVAV5DCKNZMIHM4EFNO5" },
+      { image: "images/campaign/ashi-4500.jpg", title: "腿部脫毛", badge: "社會人初次", price: "4,500", url: "https://book.squareup.com/appointments/1g4eq8uvc1qzun/location/LP2GX3BPWAFQ2/services/A4TJYBCJ7KGXZVTI5H4TN2UR" },
+    ],
+  },
+
   info: {
     salonName: "Iry",
     address: "日本熊本縣熊本市中央區下通1-1-11 Kovacs大樓4F(〒860-0807)",

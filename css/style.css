@@ -452,7 +452,9 @@ a { color: inherit; }
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.5;
-  height: clamp(320px, 48vh, 480px);
+  min-height: clamp(320px, 48vh, 480px); /* height(固定)だと、フォントサイズ×文字数が
+    ボックスを超えるビューポート比率(横広・縦短)で文字が下にはみ出し、
+    hero-leadと重なって見える不具合があったためmin-heightに変更 */
   margin-bottom: 40px;
   text-shadow: 0 4px 60px rgba(59, 199, 255, 0.35), 0 4px 40px rgba(7, 11, 18, 0.6);
 }
