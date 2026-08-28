@@ -226,32 +226,21 @@
     });
   }
 
-  /* ---------- ブログ(トップは最新3件) ---------- */
+  /* ---------- ブログ(トップページの最新3件プレビューのみ) ----------
+     記事本体(blog.html / blog/*.html)は scripts/build-blog.js が
+     個別URL・固有タイトルつきの静的HTMLとして生成する(SEOのため、
+     JSでの描画には頼らない)。ここではトップページの「最新記事」
+     プレビューだけをJSで描画し、各記事の個別ページへリンクする。 */
   const blogRoot = $("blog-list");
   if (blogRoot) {
-    const isTop = !document.body.classList.contains("blog-page-body");
-    const posts = isTop ? D.blog.slice(0, 3) : D.blog;
-    blogRoot.innerHTML = posts.map((p, i) => `
-      <a class="blog-item reveal" href="blog.html#post-${D.blog.indexOf(p)}">
+    const posts = [...D.blog].sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)).slice(0, 3);
+    blogRoot.innerHTML = posts.map((p) => `
+      <a class="blog-item reveal" href="blog/${esc(p.slug)}.html">
         <time datetime="${esc(p.date)}">${esc(p.date).replace(/-/g, ".")}</time>
         <span class="cat">${esc(p.category)}</span>
         <h3>${esc(p.title)}</h3>
         <span class="arrow" aria-hidden="true">&rarr;</span>
       </a>`).join("");
-  }
-
-  /* ---------- ブログ記事(blog.html) ---------- */
-  const articleRoot = $("article-list");
-  if (articleRoot) {
-    articleRoot.innerHTML = D.blog.map((p, i) => `
-      <article class="article" id="post-${i}">
-        <header>
-          <time datetime="${esc(p.date)}">${esc(p.date).replace(/-/g, ".")}</time>
-          <span class="cat">${esc(p.category)}</span>
-          <h2>${esc(p.title)}</h2>
-        </header>
-        <div class="body">${p.body}</div>
-      </article>`).join("");
   }
 
   /* ---------- Instagram埋め込み ---------- */
