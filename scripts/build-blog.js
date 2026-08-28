@@ -210,9 +210,29 @@ function renderPostNav(p) {
   return `<nav class="post-nav" aria-label="前後の記事">\n  ${newer}\n  ${older}\n</nav>`;
 }
 
+function buildMedia(p, base) {
+  // 記事に写真・動画を1点添える場合のブロック(任意項目)。
+  // image: { file, alt }  file はサイトルートからの相対パス(例: "images/before-after/IMG_2201.JPG")
+  // video: { file, caption } file も同様にサイトルートからの相対パス
+  if (p.image) {
+    return `<figure class="post-photo">
+      <img src="${base}${p.image.file}" alt="${escHtml(p.image.alt || p.title)}" loading="lazy">
+      <figcaption>${escHtml(p.image.alt || "")}</figcaption>
+    </figure>`;
+  }
+  if (p.video) {
+    return `<figure class="post-photo">
+      <video controls preload="metadata" src="${base}${p.video.file}"></video>
+      <figcaption>${escHtml(p.video.caption || "")}</figcaption>
+    </figure>`;
+  }
+  return "";
+}
+
 function buildPostPage(p) {
   const base = "../";
   const title = p.title + BRAND_SUFFIX;
+  const mediaUrl = p.image ? `${BASE_URL}/${p.image.file}` : null;
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -225,6 +245,7 @@ function buildPostPage(p) {
       url: p._url,
       mainEntityOfPage: { "@type": "WebPage", "@id": p._url },
       articleSection: p.category,
+      ...(mediaUrl ? { image: mediaUrl } : {}),
       author: { "@type": "Organization", name: BRAND, url: BASE_URL },
       publisher: {
         "@type": "Organization",
@@ -250,7 +271,7 @@ function buildPostPage(p) {
     canonical: p._url,
     ogType: "article",
     jsonLdBlocks: jsonLd,
-  });
+  }) + (mediaUrl ? `\n<meta property="og:image" content="${mediaUrl}">` : "");
 
   const bodyHtml = `<main class="article-page article-page--single">
   <nav class="breadcrumb" aria-label="パンくずリスト">
@@ -264,6 +285,7 @@ function buildPostPage(p) {
       <span class="cat">${escHtml(p.category)}</span>
       <h1>${escHtml(p.title)}</h1>
     </header>
+    ${buildMedia(p, base)}
     <div class="body">${p.body}</div>
   </article>
   ${renderPostNav(p)}
@@ -306,6 +328,7 @@ function buildIndexPage() {
   const cards = posts
     .map(
       (p) => `      <a class="blog-card reveal" href="blog/${p.slug}.html">
+        ${p.image ? `<img class="thumb" src="${p.image.file}" alt="${escHtml(p.image.alt || p.title)}" loading="lazy">` : ""}
         <div class="meta">
           <time datetime="${p.date}">${fmtDate(p.date)}</time>
           <span class="cat">${escHtml(p.category)}</span>
